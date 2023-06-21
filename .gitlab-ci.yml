@@ -1,0 +1,33 @@
+image: gitlab/dind
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay
+  
+build:
+  stage: build
+  script:
+    - mvn compile
+
+test:
+  stage: test
+  script:
+    - mvn test
+
+docker-deploy:
+  stage: deploy
+  script:
+    - mvn package
+    - docker build -f Dockerfile -t eservice_login_services:$CI_PIPELINE_ID . 
+    - docker tag eservice_login_services:$CI_PIPELINE_ID eservice_login_services:latest 
+    - export IMGID=`docker ps | grep eservice_login_services | awk '{print $1}'`
+    - |
+        if [ -n "$IMGID" ]
+        then
+          docker stop $IMGID
+          docker run -d -p 1217:1217  -e "SPRING_PROFILES_ACTIVE=$CI_COMMIT_BRANCH" --restart always eservice_login_services:$CI_PIPELINE_ID  
+        else
+          echo "No relevant image avaliable"
+          docker run -d -p 1217:1217 -e "SPRING_PROFILES_ACTIVE=$CI_COMMIT_BRANCH" --restart always eservice_login_services:$CI_PIPELINE_ID 
+        fi

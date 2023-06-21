@@ -1,0 +1,92 @@
+{
+  "groups": [
+    {
+      "name": "com.travel.encryption",
+      "type": "com.travel.travtronics.api.EncryptionModel",
+      "sourceType": "com.travel.travtronics.api.EncryptionModel"
+    },
+    {
+      "name": "com.travel.keycloak",
+      "type": "com.travel.travtronics.api.PropertiesModel",
+      "sourceType": "com.travel.travtronics.api.PropertiesModel"
+    },
+    {
+      "name": "com.travel.roles",
+      "type": "com.travel.travtronics.api.KeyCloakRolesModel",
+      "sourceType": "com.travel.travtronics.api.KeyCloakRolesModel"
+    }
+  ],
+  "properties": [
+    {
+      "name": "com.travel.encryption.algorithm",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.EncryptionModel"
+    },
+    {
+      "name": "com.travel.encryption.key-size",
+      "type": "java.lang.Integer",
+      "sourceType": "com.travel.travtronics.api.EncryptionModel"
+    },
+    {
+      "name": "com.travel.encryption.key-value",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.EncryptionModel"
+    },
+    {
+      "name": "com.travel.encryption.public-key",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.EncryptionModel"
+    },
+    {
+      "name": "com.travel.keycloak.client-id",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.PropertiesModel"
+    },
+    {
+      "name": "com.travel.keycloak.client-secret",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.PropertiesModel"
+    },
+    {
+      "name": "com.travel.keycloak.credentials",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.PropertiesModel"
+    },
+    {
+      "name": "com.travel.keycloak.realm",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.PropertiesModel"
+    },
+    {
+      "name": "com.travel.keycloak.rest-template",
+      "type": "org.springframework.web.client.RestTemplate",
+      "sourceType": "com.travel.travtronics.api.PropertiesModel"
+    },
+    {
+      "name": "com.travel.keycloak.url-keycloak-host",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.PropertiesModel"
+    },
+    {
+      "name": "com.travel.keycloak.user",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.PropertiesModel"
+    },
+    {
+      "name": "com.travel.roles.admin-role-id",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.KeyCloakRolesModel"
+    },
+    {
+      "name": "com.travel.roles.be-user-role-id",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.KeyCloakRolesModel"
+    },
+    {
+      "name": "com.travel.roles.fe-user-role-id",
+      "type": "java.lang.String",
+      "sourceType": "com.travel.travtronics.api.KeyCloakRolesModel"
+    }
+  ],
+  "hints": []
+}
